@@ -11,7 +11,7 @@ import {
 
 export default function NavbarMobile() {
   return (
-    <div className="flex items-center justify-between absolute md:hidden w-full p-10">
+    <div className="flex items-center justify-between absolute top-0 left-0 w-full z-50 md:hidden p-10">
       <Link className="shrink-0" href={`/`}>
         <Image src={`/shared/logo.svg`} alt="logo.svg" width={50} height={50} />
       </Link>

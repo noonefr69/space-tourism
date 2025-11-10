@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NavbarDesktop() {
   return (
-    <div className="md:flex items-center justify-between absolute w-full pt-10 hidden">
+    <div className="md:flex items-center justify-between absolute top-0 left-0 right-0 z-50 w-full pt-10 hidden">
       <Link className="ml-7 lg:ml-10 shrink-0" href={`/`}>
         <Image src={`/shared/logo.svg`} alt="logo.svg" width={50} height={50} />
       </Link>
