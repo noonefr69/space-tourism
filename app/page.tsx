@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="bg-[url('/home/background-home-mobile.jpg')] relative md:bg-[url('/home/background-home-tablet.jpg')] lg:bg-[url('/home/background-home-desktop.jpg')] min-h-screen bg-no-repeat bg-center bg-cover">
-      <div className="grid lg:grid-cols-2 gap-20 container px-2 lg:px-32 mx-auto pt-44 lg:pt-75 text-center lg:text-left">
+      <div className="grid lg:grid-cols-2 gap-20 container px-2 lg:px-10 mx-auto pt-44 lg:pt-75 text-center lg:text-left">
         <div className="flex flex-col justify-center">
           <h5 className="text-gray-400 font-mono lg:text-xl relative lg:top-2 tracking-[2.7px] uppercase">
             So, you want to travel to
@@ -18,7 +18,7 @@ export default function Home() {
             world experience!
           </p>
         </div>
-        <div className="flex items-center justify-center lg:justify-end pb-20 lg:pb-0">
+        <div className="flex items-center justify-center pb-20 lg:pb-0">
           <Link
             href="/destination"
             className="rounded-full bg-white w-72 h-72 font-serif flex items-center justify-center text-xl text-[32px] uppercase tracking-[1.25px] transition-all duration-300"

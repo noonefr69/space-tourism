@@ -1,5 +1,3 @@
-// ...existing code...
-// import DestinationClient from "./DestinationClient";
 import datas from "../../../data.json";
 import DestinationClient from "./components/DestinationClient";
 
@@ -16,10 +14,8 @@ export default function Destination() {
           Pick your destination
         </h1>
 
-        {/* client component renders interactive UI (tabs, image, details) */}
         <DestinationClient destinations={destinations} />
       </div>
     </div>
   );
 }
-// ...existing code...

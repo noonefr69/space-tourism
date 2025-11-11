@@ -3,8 +3,6 @@ import Link from "next/link";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -28,7 +26,7 @@ export default function NavbarMobile() {
           <div className="sr-only">
             <SheetTitle>Menu</SheetTitle>
           </div>
-          <div className="shrink-0 backdrop-blur-sm px-7 lg:px-10 flex flex-col mt-20 text-white lg:gap-4">
+          <div className="shrink-0 backdrop-blur-sm px-4 lg:px-10 flex flex-col mt-20 text-white lg:gap-4">
             <Link
               className="p-8 lg:p-10 lg:text-lg duration-200 border-b-2 border-transparent hover:border-white"
               href={`/`}
