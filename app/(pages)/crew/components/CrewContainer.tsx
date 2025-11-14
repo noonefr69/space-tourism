@@ -34,7 +34,7 @@ export default function CrewContainer({ crews }: { crews: CrewProps[] }) {
           <Tabs crews={crews} filterd={filterd} setFilterd={setFilterd} />
         </div>
       </div>
-      <div className="relative flex items-center justify-center">
+      <div className="relative flex lg:justify-start justify-center">
         {filterdCrews.map((crew, i) => (
           <Image
             key={i}
