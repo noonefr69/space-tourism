@@ -133,7 +133,19 @@
     }
   }
 }
-
-body{
-  background-color: black;
+.custom-cursor {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.686);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: 150ms ease-out;
+  z-index: 9999;
 }
+
+
+/* body {
+  cursor: url("/shared/icon-close.svg") 16 16, auto;
+} */
