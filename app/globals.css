@@ -118,3 +118,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+@theme {
+  --animate-faceIn: faceIn 0.4s ease-in-out;
+
+  @keyframes faceIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+body{
+  background-color: black;
+}
