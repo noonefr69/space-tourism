@@ -75,6 +75,7 @@ export default function MouseFollower({
 
       {/* cursor dot (immediate) */}
       <div
+        className="lg:block hidden"
         ref={dotRef}
         style={{
           position: "fixed",
@@ -94,6 +95,7 @@ export default function MouseFollower({
 
       {/* trailing ring (smooth) */}
       <div
+        className="lg:block hidden"
         color="white"
         ref={ringRef}
         style={{
@@ -105,7 +107,7 @@ export default function MouseFollower({
           borderRadius: "100%",
           border: "0px",
           boxShadow: "0px 0px 10px 10px rgba(255, 255, 255, 0.586)",
-        //   backgrou   ndColor: "rgba(255, 255, 255, 0.586)",
+          //   backgrou   ndColor: "rgba(255, 255, 255, 0.586)",
           pointerEvents: "none",
           transform: "translate3d(-9999px,-9999px,0)",
           zIndex: 9998,

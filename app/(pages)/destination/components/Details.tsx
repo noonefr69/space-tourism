@@ -13,7 +13,7 @@ export default function Details({ destination }: { destination: D }) {
     <div className="row-span-2">
       <motion.h1
         layout
-        className="lg:text-8xl text-7xl text-center lg:text-start mb-7 font-serif text-white"
+        className="lg:text-8xl uppercase text-7xl text-center lg:text-start mb-7 font-serif text-white"
       >
         {destination.name}
       </motion.h1>
