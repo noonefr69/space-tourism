@@ -121,6 +121,16 @@
 
 @theme {
   --animate-faceIn: faceIn 0.4s ease-in-out;
+  --animate-fadeIn: fadeIn 0.4s ease-in-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   @keyframes faceIn {
     0% {

@@ -37,7 +37,7 @@ export default function Home() {
         <div className="flex items-center justify-center pb-20 lg:pb-0">
           <Link
             href="/destination"
-            className="rounded-full lg:hidden bg-white w-72 h-72 font-serif flex items-center justify-center text-xl text-[32px] uppercase tracking-[1.25px] transition-all duration-300"
+            className="rounded-full active:scale-95 lg:hidden bg-white w-72 h-72 font-serif flex items-center justify-center text-xl text-[32px] uppercase tracking-[1.25px] transition-all duration-300"
           >
             Explore
           </Link>

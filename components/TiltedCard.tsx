@@ -110,10 +110,7 @@ export default function TiltedCard({
       )}
 
       <motion.div
-        initial={{ opacity: 0.1 }}
-        transition={{ duration: 0.1, ease: "easeOut" }}
-        whileInView={{ scale: 1.1, opacity: 1 }}
-        className="tilted-card-inner text-2xl lg:text-4xl font-serif font-semibold bg-white cursor-pointer flex items-center justify-center rounded-full"
+        className="animate-fadeIn tilted-card-inner text-2xl lg:text-4xl font-serif font-semibold bg-white cursor-pointer flex items-center justify-center rounded-full"
         style={{
           width: imageWidth,
           height: imageHeight,
