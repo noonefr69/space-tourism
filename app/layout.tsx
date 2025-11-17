@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 // @ts-ignore
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import MouseFollower from "@/components/MouseFollower";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,8 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black cursor-(--my-cursor)`}
       >
+        {/* <MouseFollower /> */}
         <Navbar />
         {children}
       </body>

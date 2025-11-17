@@ -8,7 +8,7 @@ export default function NavbarDesktop() {
         <Image src={`/shared/logo.svg`} alt="logo.svg" width={50} height={50} />
       </Link>
       <div className="h-px w-full z-10 rounded-2xl relative left-10 bg-[#ffffff3c]"></div>
-      <div className="shrink-0 backdrop-blur-sm px-7 lg:px-10 flex items-center text-white lg:gap-4">
+      <div className="shrink-0 backdrop-blur-sm px-7 lg:px-10 flex items-center text-white ">
         <Link
           className="p-8 lg:p-10 lg:text-lg duration-200 border-b-2 border-transparent hover:border-white"
           href={`/`}

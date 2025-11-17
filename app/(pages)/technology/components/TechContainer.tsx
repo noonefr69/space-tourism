@@ -4,6 +4,7 @@ import { useState } from "react";
 import Tabs from "./Tabs";
 import Image from "next/image";
 import Details from "./Details";
+import { motion, AnimatePresence } from "framer-motion";
 
 export type TechContainerProps = {
   name: string;
@@ -21,51 +22,101 @@ export default function TechContainer({
     return tech.name === filterd;
   });
   return (
-    <div className="grid lg:grid-cols-2 items-center lg:px-10 gap-16">
-      <div className="lg:flex items-center gap-5 hidden">
+    <div className="grid mt-18 lg:grid-cols-2 items-center lg:px-10 gap-16 duration-200">
+      <div className="lg:flex items-center lg:min-h-[calc(100vh-40vh)] gap-5 hidden">
         <div className="flex flex-col gap-5">
           <Tabs techs={techs} filterd={filterd} setFilterd={setFilterd} />{" "}
         </div>
-        <div className="">
-          <h3 className="text-gray-400 font-semibold lg:text-xl uppercase font-mono">
-            The terminology...
-          </h3>
-          <Details filterdTech={filterdTech} />
-        </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={filterd}
+            initial={{ opacity: 0, x: -2 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -2 }}
+            transition={{ duration: 0.35 }}
+            className=""
+          >
+            <motion.h3
+              initial={{ opacity: 0, x: -3 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.08 }}
+              className="text-gray-400 font-semibold lg:text-xl uppercase font-mono"
+            >
+              The terminology...
+            </motion.h3>
+            <Details filterdTech={filterdTech} />
+          </motion.div>
+        </AnimatePresence>
       </div>
-      <div className="hidden lg:flex pb-10">
-        {filterdTech.map((tech, i) => (
-          <Image
-            key={i}
-            src={tech.images.portrait}
-            alt={tech.name}
-            width={500}
-            height={500}
-          />
-        ))}
-      </div>
-      <div className="flex lg:hidden">
-        {filterdTech.map((tech, i) => (
-          <Image
-            key={i}
-            src={tech.images.landscape}
-            alt={tech.name}
-            width={500}
-            height={500}
-            className="w-full"
-          />
-        ))}
-      </div>
-      <div className="flex flex-col items-center gap-5 lg:hidden px-2">
+      <AnimatePresence mode="wait">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.35 }}
+          key={filterd}
+          className="hidden lg:flex relative rounded-2xl w-full h-full"
+        >
+          {filterdTech.map((tech, i) => (
+            <Image
+              key={i}
+              src={tech.images.portrait}
+              alt={tech.name}
+              // width={500}
+              // height={500}
+              fill
+              className="rounded-2xl scale-90"
+            />
+          ))}
+        </motion.div>
+      </AnimatePresence>
+      <AnimatePresence mode="wait">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35 }}
+          key={filterd}
+          className="flex lg:hidden relative w-full h-44"
+        >
+          {filterdTech.map((tech, i) => (
+            <Image
+              key={i}
+              src={tech.images.landscape}
+              alt={tech.name}
+              // width={500}
+              // height={500}
+              fill
+              // className="w-full "
+            />
+          ))}
+        </motion.div>
+      </AnimatePresence>
+      <div className="flex flex-col items-center gap-5 lg:hidden px-2 duration-200">
         <div className="flex gap-5">
           <Tabs techs={techs} filterd={filterd} setFilterd={setFilterd} />{" "}
         </div>
-        <div className="">
-          <h3 className="text-gray-400 uppercase font-mono text-center">
-            The terminology...
-          </h3>
-          <Details filterdTech={filterdTech} />
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            key={filterd}
+            className="duration-200"
+          >
+            <motion.h3
+              initial={{ x: -3 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.35 }}
+              className="text-gray-400 mb-4 uppercase font-mono text-center"
+            >
+              The terminology...
+            </motion.h3>
+            <Details filterdTech={filterdTech} />
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );
