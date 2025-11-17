@@ -22,8 +22,8 @@ export default function TechContainer({
     return tech.name === filterd;
   });
   return (
-    <div className="grid lg:grid-cols-2 items-center lg:px-10 gap-16 duration-200">
-      <div className="lg:flex items-center gap-5 hidden">
+    <div className="grid mt-18 lg:grid-cols-2 items-center lg:px-10 gap-16 duration-200">
+      <div className="lg:flex items-center lg:min-h-[calc(100vh-40vh)] gap-5 hidden">
         <div className="flex flex-col gap-5">
           <Tabs techs={techs} filterd={filterd} setFilterd={setFilterd} />{" "}
         </div>
@@ -56,16 +56,17 @@ export default function TechContainer({
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.35 }}
           key={filterd}
-          className="hidden lg:flex pb-10"
+          className="hidden lg:flex relative rounded-2xl w-full h-full"
         >
           {filterdTech.map((tech, i) => (
             <Image
               key={i}
               src={tech.images.portrait}
               alt={tech.name}
-              width={500}
-              height={500}
-              className="rounded-2xl"
+              // width={500}
+              // height={500}
+              fill
+              className="rounded-2xl scale-90"
             />
           ))}
         </motion.div>

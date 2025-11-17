@@ -11,7 +11,7 @@ export default function Details({
   return (
     <>
       {filterdTech.map((tech, i) => (
-        <div className="pb-10" key={i}>
+        <div className="lg:pb-0 pb-10" key={i}>
           <motion.h1
             initial={{ opacity: 0, x: -5 }}
             animate={{ opacity: 1, x: 0 }}
@@ -24,7 +24,7 @@ export default function Details({
             initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.08 }}
-            className="text-gray-400 lg:text-start text-center lg:pb-0 "
+            className="text-gray-400 lg:text-start text-center "
           >
             {tech.description}
           </motion.p>
